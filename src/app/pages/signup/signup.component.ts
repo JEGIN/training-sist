@@ -27,17 +27,17 @@ export class SignupComponent {
 
   signUpForm = new FormGroup(
     {
-    fname: new FormControl('Sathybama'),
-    lname: new FormControl('University'),
-    email: new FormControl('example@email.com'),
-    password: new FormControl(Validators.pattern('[A-Za-z0-9!@#$%^&]{6, 12}')),
-    confirm_password: new FormControl(Validators.pattern('[A-Za-z0-9!@#$%^&]{6, 12}')),
-    age: new FormControl('', Validators.required),
-    gender: new FormControl('Male', Validators.required),
-    country: new FormControl(this.countries[0], Validators.required),
-    address: new FormControl('')
-  }
-)
+      fname: new FormControl('Sathybama'),
+      lname: new FormControl('University'),
+      email: new FormControl('example@email.com'),
+      password: new FormControl(Validators.pattern('[A-Za-z0-9!@#$%^&]{6, 12}')),
+      confirm_password: new FormControl(Validators.pattern('[A-Za-z0-9!@#$%^&]{6, 12}')),
+      age: new FormControl('', Validators.required),
+      gender: new FormControl('Male', Validators.required),
+      country: new FormControl(this.countries[0], Validators.required),
+      address: new FormControl('Street 45, Bengaluru')
+    }
+  )
 
   signUp() {
     console.log(this.signUpForm.value);
@@ -51,6 +51,7 @@ export class SignupComponent {
       console.log('Both Password Matches')
       alert("Registered your account!")
       this.storeUserRecord()
+
       this._router.navigate(['/dashboard'])
     } else {
       console.log('Something went wrong')
@@ -62,8 +63,9 @@ export class SignupComponent {
     this._router.navigate(['login'])
   }
 
-  storeUserRecord(){
+  storeUserRecord() {
     localStorage.setItem('userInfo', JSON.stringify(this.signUpForm.value))
+    console.log(localStorage.getItem('userInfo'))
     console.log('Local storage has been set')
   }
 }

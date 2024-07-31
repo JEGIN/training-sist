@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent {
   userData: any[];
 
-  constructor(private _router: Router) {
+  constructor() {
     this.userData = []
   }
 
@@ -23,7 +23,8 @@ export class DashboardComponent {
   getUserData() {
     this.userData = JSON.parse(localStorage.getItem('userInfo') || '[]')
 
-
+    console.log(this.userData)
+    
     this.userData = Object.keys(this.userData).map(key => this.userData[key as keyof typeof this.userData])
 
     console.log(this.userData)
