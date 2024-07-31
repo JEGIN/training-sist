@@ -1,0 +1,28 @@
+<div class="loginScreen">
+    <section>
+        <h1>Login Screen</h1>
+
+        <br>
+        <label class="label" name="name" for="name">Username</label>
+        
+        <input class="form-control" type="text" name="name" [formControl]="name"
+        >
+
+        <p>Entered Name: {{name.value}}</p>
+
+        <br>
+        <label class="label" name="email" for="email">Email ID</label>
+        <input class="form-control" type="text" name="email" [formControl]="email">
+
+        <p>Entered Name: {{email.value }}</p>
+
+        <label class="label" name="password" for="password">Password</label>
+        <input class="form-control" type="password" name="password" [formControl]="password">
+        
+        <p>Entered Password: {{password.value}}</p>
+        <br>
+
+        <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+    </section>
+
+</div>

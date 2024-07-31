@@ -1,0 +1,27 @@
+<p>dashboard works!</p>
+
+<h1> Hello {{ title }}</h1>
+<h2> Hello {{ desc }}</h2>
+
+<div>
+    <table>
+        <tr *ngFor="let country of countriesList">
+            <td>{{ country }}</td>
+        </tr>
+    </table>
+    <p> {{ countriesList }} </p>
+
+    <hr/>
+
+    <table class="table table-striped">
+        <tr *ngFor="let obj of countriesWithPopulation">
+            <td>{{ obj.id }}</td>
+            <td>{{ obj.name }}</td>
+            <td>{{ obj.population }}</td>
+            <td>{{ obj.gdp }}</td>
+        </tr>
+    </table>
+
+    <hr>
+    <button>Submit</button>
+</div>

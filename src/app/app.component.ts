@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
@@ -9,6 +10,4 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'SATHYABAMA';
-  desc = "Welcome to Sathyabama Pride";
 }
