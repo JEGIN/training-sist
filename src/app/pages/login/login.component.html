@@ -4,9 +4,8 @@
 
         <br>
         <label class="label" name="name" for="name">Username</label>
-        
-        <input class="form-control" type="text" name="name" [formControl]="name"
-        >
+
+        <input class="form-control" type="text" name="name" [formControl]="name">
 
         <p>Entered Name: {{name.value}}</p>
 
@@ -18,11 +17,17 @@
 
         <label class="label" name="password" for="password">Password</label>
         <input class="form-control" type="password" name="password" [formControl]="password">
-        
+
         <p>Entered Password: {{password.value}}</p>
         <br>
 
         <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+
+        <br>
+        <div>
+            <p>No account yet!</p>
+            <button class="btn btn-primary" (click)="navigateToSignUp()">Sign Up</button>
+        </div>
     </section>
 
 </div>

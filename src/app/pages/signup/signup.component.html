@@ -1,1 +1,63 @@
-<p>signup works!</p>
+<div class="signUpScreen">
+    <section>
+        <h1>Sign Up for a New Account</h1>
+
+        <br>
+        <form [formGroup]="signUpForm">
+            <label class="label" name="fname" for="fname">First Name:</label>
+            <input class="form-control" type="text" name="fname" formControlName="fname">
+
+            <label class="label" name="lname" for="lname">Last Name: </label>
+            <input class="form-control" type="text" name="lname" formControlName="lname">
+
+            <!-- <p>Entered Name: {{name.value}}</p> -->
+
+            <br>
+            <label class="label" name="email" for="email">Email ID: </label>
+            <input class="form-control" type="text" name="email" 
+            placeholder="example@email.com" formControlName="email">
+            <br>
+
+            <!-- <p>Entered Name: {{email.value }}</p> -->
+
+            <label class="label" name="password" for="password">Create Password: </label>
+            <input class="form-control" type="password" name="password" formControlName="password">
+
+            <label class="label" name="confirm_password" for="confirm_password">Confirm Password: </label>
+            <input class="form-control" type="password" name="confirm_password" formControlName="confirm_password">
+
+            <!-- <p>New Password: {{password.value}}</p>
+            <p>New Password: {{confirm_password.value}}</p> -->
+            <br>
+
+            <label>Age:</label>
+            <input class="form-control" type="number" name="age" formControlName="age">
+
+            <br>
+            <label>Gender:</label>
+            <select class="form-control" name="gender" formControlName="gender">
+                <option *ngFor="let gender of genders" [value]="gender">
+                    {{gender}}
+                </option>
+            </select>
+
+
+            <br>
+            <label>Country:</label>
+            <select class="form-control" name="country" formControlName="country">
+                <option *ngFor="let country of countries" [value]="country">
+                    {{country}}
+                </option>
+            </select>
+
+            <label>Address:</label>
+            <input class="form-control" type="text" name="address" formControlName="address"><br>
+
+            <button class="btn btn-primary" (click)="signUp()">Submit</button><br>
+
+            <p>Already Have an Account!</p><br>
+            <button class="btn btn-secondary" (click)="signIn()">Login</button>
+        </form>
+    </section>
+
+</div>

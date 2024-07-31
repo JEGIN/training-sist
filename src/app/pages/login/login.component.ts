@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,25 +11,39 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 })
 export class LoginComponent {
   pageName = "Login";
-  name= new FormControl();
-  email= new FormControl();
-  password= new FormControl();
+  name = new FormControl();
+  email = new FormControl();
+  password = new FormControl();
 
-  ngOnInit(){
+  constructor(private router: Router) {
+
+  }
+
+  ngOnInit() {
     this.name.reset()
     this.email.reset()
     this.password.reset()
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.email.value, this.name.value, this.password.value)
-    // this.email.valid && this.password.valid
-    if(this.email.value == 'pravileaf@gmail.com' && this.password.value =='123456'){
-      console.log('Data validated')
-      alert("Successfully Logged in!")
-    }else{
-      console.log('Something went wrong')
-      alert("Something went wrong!")
+    if (this.email.valid && this.password.valid) {
+      if (this.email.value == 'pravileaf@gmail.com' && this.password.value == '123456') {
+        console.log('Data validated')
+        alert("Successfully Logged in!")
+      } else {
+        console.log('Something went wrong')
+        alert("Something went wrong!")
+      }
+    } else {
+      console.log('The form is invalid!')
+      alert('The form is invalid!')
     }
+
+  }
+
+
+  navigateToSignUp() {
+    this.router.navigate(['signup'])
   }
 }

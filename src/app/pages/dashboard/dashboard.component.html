@@ -1,9 +1,9 @@
-<p>dashboard works!</p>
+<div style="margin:20%; padding:20px">
+    <p>dashboard works!</p>
 
-<h1> Hello {{ title }}</h1>
-<h2> Hello {{ desc }}</h2>
-
-<div>
+    <h1> Hello {{ title }}</h1>
+    <h2> Hello {{ desc }}</h2>
+    <br>
     <table>
         <tr *ngFor="let country of countriesList">
             <td>{{ country }}</td>
@@ -11,7 +11,7 @@
     </table>
     <p> {{ countriesList }} </p>
 
-    <hr/>
+    <hr />
 
     <table class="table table-striped">
         <tr *ngFor="let obj of countriesWithPopulation">
@@ -23,5 +23,27 @@
     </table>
 
     <hr>
-    <button>Submit</button>
+
+    <hr />
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Age</td>
+                <td>Address</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of userData" >
+                <td>{{ obj }}</td>
+                <td>{{ obj.lname }}</td>
+                <td>{{ obj.age }}</td>
+                <td>{{ obj.address }}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+    <button class="btn btn-danger">Logout</button>
 </div>
